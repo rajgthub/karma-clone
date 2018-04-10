@@ -6,8 +6,6 @@
 
 /*  TIP: When using Flexbox, remember the items you want to move around need to be inside a parent container set to 'display: flex' */
 .header {
-  padding: 0 0.938rem;
-  margin: 0 auto;
   min-width: 37.5rem;
   height: 4.375rem;
   background-color: #fff;
@@ -21,27 +19,18 @@
   }
   .logo{
     height: 4.375rem;
-    // width: 4.375rem;
-    // display: block;
   }
 }
 .container{
-  width:60%;
+  width:65%;
   display: flex;
   justify-content: space-between;
-  // background-color: green;
-  // @include flx-center;
 }
-//  Navigation Section
-
 .navigation {
-  // background-color: #fff;
-  // flex-grow: 1;
-  width: 65%;
+  width: 75%;
   @include flx-center;
   &__list{
     width: 100%;
-    // background-color: green;
     display: flex;
     justify-content: space-between;
     color: #838994;
@@ -111,26 +100,25 @@ button:hover {
 .cases {
   background-color: #fff;
   overflow: hidden;
-  padding-bottom: 5rem;
+  padding: 2.5rem;
   @include flx-center;
   &__content{
-    margin-top: 7.875rem;
     display:flex;
     flex-direction: column;
-    padding: 0;
+    padding: 1rem;
     color: #1d1e21;
     &>h2{
       font-size: 2.75rem;
-      margin: 1.625rem 0 4.125rem;
-      margin-left: 6rem;
+      margin-bottom: 2rem;
       font-weight: 300;
       align-self: center;
+      padding: 1rem;
     }
   }
   &__devices{
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     &>li{
       display: flex;
       flex-direction: column;
@@ -138,7 +126,6 @@ button:hover {
     }
     &>li:not(:last-child){
       margin-right: 1rem;
-      
     }
     
   }
@@ -152,6 +139,7 @@ button:hover {
       font-weight: 400;
       font-size: 1.563rem;
       margin: 2.5rem 0px 1.875rem;
+      text-align: center;
     }
   }
 }
@@ -159,16 +147,12 @@ button:hover {
 // Footer
 .social {
   background-color: #fff;
-  // background-color: blue;
   overflow: auto;
   padding-bottom: 9.375rem;
-  // display: flex;
-  // width: 65%;
   @include flx-center;
   &__content{
     width: 60%;
-    flex-direction: column;
-    // background-color: green;
+    flex-direction: column;;
     &>hr{
       border: 0;
       border-top: 1px solid #eaebec;
@@ -210,4 +194,61 @@ button:hover {
   }
 }
 
-
+// MEDIA
+@media only screen and (max-width: 900px) {
+  .container{
+    width:100%;
+    padding: 0 1rem;
+    justify-content: space-around;
+  }
+  .cases {
+    &__content{
+      width:100%;
+    padding: 1rem;
+      margin: 0;
+    }
+    & > h2 {
+        font-size:2rem;
+        margin: 0;
+    }
+  }
+  
+}
+@media only screen and (max-width: 767px) { 
+  .navigation {
+      opacity: 0;
+      visibility: hidden;
+  }
+  .intro{
+      &__content{
+          padding: .5rem;
+      }
+      &__h1{
+          font-size: 2.5rem;
+          text-align: center;
+      }
+      &__h3{
+          font-size: 1.5rem;
+          text-align: center;
+      }
+  }
+ 
+  .cases  {
+       h2 {
+      font-size:2rem;
+      text-align: center;
+  }
+  h3 {
+    font-size:1.5rem;
+}
+      &__devices {
+          flex-direction: column;
+      }
+  }
+  .social{
+      &__content {
+           width:100%;
+      }
+  }
+     
+}
